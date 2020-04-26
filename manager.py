@@ -35,9 +35,17 @@ class Manager:
                         "Accéder à la fonctionnalité avancée",
                         "Quitter"
                         ],
-            "action_options": [(lambda memory: DataManipulation(memory).add_data()),
-                               (lambda memory: DataManipulation(memory).remove_last_data()),
-                               (lambda memory: DataManipulation(memory).print_statistics()),
+            "action_options": [(lambda acteur, memory: acteur.afficher_pays(memory)),
+                               (lambda acteur, memory: acteur.proposer_correction(memory)),
+                               (lambda acteur, memory: acteur.voir_correction(memory)),
+                               (lambda acteur, memory: acteur.ajouter_pays(memory)),
+                               (lambda acteur, memory: acteur.modifier_pays(memory)),
+                               (lambda acteur, memory: acteur.supprimer_pays(memory)),
+                               (lambda acteur, memory: acteur.creer_compte(memory)),
+                               (lambda acteur, memory: acteur.supprimer_compte(memory)),
+                               (lambda acteur, memory: acteur.resume_info(memory)),
+                               (lambda acteur, memory: acteur.graph(memory)),
+                               (lambda acteur, memory: acteur.fonc_avancee(memory)),
                                (lambda memory: Close(memory))
                                ]
         }
@@ -46,9 +54,9 @@ class Manager:
         menu_acteurs = {
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
-            "action_options": [lambda memory: Consultant(1).set_indices_taches([0, 1]),
+            "action_options": [lambda a,memory: return (Consultant(a), Consultant(a).set_indices_taches([0, 1])),
                                lambda memory: classe_abstraite_connexion.connexion(),
-                               #connexion doit donc renvoyer les indices des tâches
+                               #connexion doit donc renvoyer l'acteur et les indices des tâches
                                lambda memory: Close(memory)]
         }
         menu_correction = {
@@ -56,12 +64,12 @@ class Manager:
             "options": ["Accepter", "Refuser", "Ne rien faire et quitter"],
             "action_options": [lambda memory: modifier liste_correction et modifier pays,
                                lambda memory: modifier liste_correction,
-                               lambda memory: menu_actions.run()]}
+                               lambda memory: menu_actions.run()]} #menu pas forcément utile selon la structure de la fonction
        menu_suppression = {
             "question": "Confirmez-vous la suppression du pays ?",
             "options": ["Confirmer et Supprimer", "Abandonner la procédure"],
             "action_options": [lambda memory: suppression,
-                               lambda memory: menu_actions.run()]}
+                               lambda memory: menu_actions.run()]} #menu pas forcément utile selon la structure de la fonction
        menu_preselection = {
             "question": "Voulez vous modifier la liste préselectionnée ?",
             "options": ["Valider la liste", "Ajouter un pays", "Retirer un pays"],
