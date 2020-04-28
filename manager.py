@@ -55,7 +55,7 @@ class Manager:
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
             "action_options": [lambda a,memory: return (Consultant(a), [0, 1]),
-                               lambda memory: classe_abstraite_connexion.connexion(),
+                               lambda memory: classe_abstraite_connexion().connexion(),
                                #connexion doit donc renvoyer l'acteur et les indices des tâches
                                lambda memory: Close(memory)]
         }
