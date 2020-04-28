@@ -64,12 +64,12 @@ class Manager:
             "options": ["Accepter", "Refuser", "Ne rien faire et quitter"],
             "action_options": [lambda memory: modifier liste_correction et modifier pays,
                                lambda memory: modifier liste_correction,
-                               lambda memory: menu_actions.run()]} #menu pas forcément utile selon la structure de la fonction
+                               lambda memory: open_menu.Menu(memory)]} #menu pas forcément utile selon la structure de la fonction
        menu_suppression = {
             "question": "Confirmez-vous la suppression du pays ?",
             "options": ["Confirmer et Supprimer", "Abandonner la procédure"],
             "action_options": [lambda memory: suppression,
-                               lambda memory: menu_actions.run()]} #menu pas forcément utile selon la structure de la fonction
+                               lambda memory: open_menu.Menu(memory)]} #menu pas forcément utile selon la structure de la fonction
        menu_preselection = {
             "question": "Voulez vous modifier la liste préselectionnée ?",
             "options": ["Valider la liste", "Ajouter un pays", "Retirer un pays"],
