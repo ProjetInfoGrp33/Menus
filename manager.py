@@ -37,14 +37,14 @@ class Manager:
                         ],
             "action_options": [(lambda acteur, memory: acteur.afficher_pays(memory)),
                                (lambda acteur, memory: acteur.proposer_correction(memory)),
-                               (lambda acteur, memory: acteur.voir_correction(memory)),
+                               (lambda acteur, memory: acteur.accepter_refuser_proposition(memory)),
                                (lambda acteur, memory: acteur.ajouter_pays(memory)),
                                (lambda acteur, memory: acteur.modifier_pays(memory)),
                                (lambda acteur, memory: acteur.supprimer_pays(memory)),
                                (lambda acteur, memory: acteur.creer_compte(memory)),
                                (lambda acteur, memory: acteur.supprimer_compte(memory)),
-                               (lambda acteur, memory: acteur.resume_info(memory)),
-                               (lambda acteur, memory: acteur.graph(memory)),
+                               (lambda acteur, memory: acteur.resume_informations(memory)),
+                               (lambda acteur, memory: acteur.representation_graphique(memory)),
                                (lambda acteur, memory: acteur.fonc_avancee(memory)),
                                (lambda memory: Close(memory))
                                ]
@@ -55,7 +55,7 @@ class Manager:
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
             "action_options": [lambda a,memory: return (Consultant(a), [0, 1]),
-                               lambda memory: classe_abstraite_connexion().connexion(),
+                               lambda memory: classe_abstraite_connexion().connexion(memory),
                                #connexion doit donc renvoyer l'acteur et les indices des tâches
                                lambda memory: Close(memory)]
         }
