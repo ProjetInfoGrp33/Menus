@@ -2,7 +2,7 @@
 Affichage le menu principale et activer les actions associées
 """
 
-from menu.abstract_vue import AbstractVue
+from Menus.abstract_vue import AbstractVue
 
 class Menu(AbstractVue):
     """menu principal
