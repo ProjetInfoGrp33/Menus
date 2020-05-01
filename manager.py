@@ -1,8 +1,6 @@
 from menu.close_menu import Close
 from menu.start import Start
-from metier.acteur import Acteur
-from metier.data_manimulation import DataManipulation
-from metier.super_acteur import SuperActeur
+import ClassesActeur
 import numpy as np
 
 class Manager:
