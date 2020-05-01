@@ -35,17 +35,17 @@ class Manager:
                         "Accéder à la fonctionnalité avancée",
                         "Quitter"
                         ],
-            "action_options": [(lambda acteur, memory: acteur.afficher_pays(memory)),
-                               (lambda acteur, memory: acteur.proposer_correction(memory)),
-                               (lambda acteur, memory: acteur.accepter_refuser_proposition(memory)),
-                               (lambda acteur, memory: acteur.ajouter_pays(memory)),
-                               (lambda acteur, memory: acteur.modifier_pays(memory)),
-                               (lambda acteur, memory: acteur.supprimer_pays(memory)),
-                               (lambda acteur, memory: acteur.creer_compte(memory)),
-                               (lambda acteur, memory: acteur.supprimer_compte(memory)),
-                               (lambda acteur, memory: acteur.resume_informations(memory)),
-                               (lambda acteur, memory: acteur.representation_graphique(memory)),
-                               (lambda acteur, memory: acteur.fonc_avancee(memory)),
+            "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory)),
+                               (lambda memory: memory["acteur"].proposer_correction(memory)),
+                               (lambda memory: memory["acteur"].accepter_refuser_proposition(memory)),
+                               (lambda memory: memory["acteur"].ajouter_pays(memory)),
+                               (lambda memory: memory["acteur"].modifier_pays(memory)),
+                               (lambda memory: memory["acteur"].supprimer_pays(memory)),
+                               (lambda memory: memory["acteur"].creer_compte(memory)),
+                               (lambda memory: memory["acteur"].supprimer_compte(memory)),
+                               (lambda memory: memory["acteur"].resume_informations(memory)),
+                               (lambda memory: memory["acteur"].representation_graphique(memory)),
+                               (lambda memory: memory["acteur"].fonc_avancee(memory)),
                                (lambda memory: Close(memory))
                                ]
         }
