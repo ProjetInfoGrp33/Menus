@@ -6,8 +6,8 @@
 * et lance le menu principal.
 """
 
-from menu.abstract_vue import AbstractVue
-from menu.open_menu import Menu
+from Menus.abstract_vue import AbstractVue
+from Menus.open_menu import Menu
 
 class Start(AbstractVue):
     """menu de démarrage
