@@ -37,17 +37,17 @@ class Manager:
                         "Accéder à la fonctionnalité avancée",
                         "Quitter"
                         ],
-            "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory)),
-                               (lambda memory: memory["acteur"].proposer_correction(memory)),
-                               (lambda memory: memory["acteur"].accepter_refuser_proposition(memory)),
-                               (lambda memory: memory["acteur"].ajouter_pays(memory)),
-                               (lambda memory: memory["acteur"].modifier_pays(memory)),
-                               (lambda memory: memory["acteur"].supprimer_pays(memory)),
-                               (lambda memory: memory["acteur"].creer_compte(memory)),
-                               (lambda memory: memory["acteur"].supprimer_compte(memory)),
-                               (lambda memory: memory["acteur"].resume_informations(memory)),
-                               (lambda memory: memory["acteur"].representation_graphique(memory)),
-                               (lambda memory: memory["acteur"].fonc_avancee(memory)),
+            "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory["data"],memory)),
+                               (lambda memory: memory["acteur"].proposer_correction(memory,memory["data"],memory["Corrections"])),
+                               (lambda memory: memory["acteur"].accepter_refuser_proposition(memory["data"],memory["Corrections"],memory)),
+                               (lambda memory: memory["acteur"].ajouter_pays(memory["data"],memory)),
+                               (lambda memory: memory["acteur"].modifier_pays(memory["data"],memory)),
+                               (lambda memory: memory["acteur"].supprimer_pays(memory,memory["data"])),
+                               (lambda memory: memory["acteur"].creer_compte(memory,memory["Liste_comptes"],)),
+                               (lambda memory: memory["acteur"].supprimer_compte(memory),memory["Liste_comptes"]),
+                               (lambda memory: memory["acteur"].resume_informations(memory["data"],memory)),
+                               (lambda memory: memory["acteur"].representation_graphique(memory["data"],memory)),
+                               # rajouter les fonctions perso + fonctionnalité avancée?
                                (lambda memory: Close(memory))
                                ]
         }
@@ -56,28 +56,31 @@ class Manager:
         menu_acteurs = {
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
-            "action_options": [lambda a,memory: return (Consultant(a), [0, 1]),
-                               lambda a,memory: Classe_abstraite_connexion().connexion(memory),
+            "action_options": [(lambda a,memory: (Consultant(a), [0, 1])),
+                               (lambda a,memory: Classe_abstraite_connexion().connexion(memory)),
                                #connexion doit donc renvoyer l'acteur et les indices des tâches
-                               lambda a,memory: Close(memory)]
+                               (lambda a,memory: Close(memory))]
         }
-        menu_correction = {
-            "question": "Acceptez-vous ou refusez-vous la correction ?",
-            "options": ["Accepter", "Refuser", "Ne rien faire et quitter"],
-            "action_options": [lambda memory: modifier liste_correction et modifier pays,
-                               lambda memory: modifier liste_correction,
-                               lambda memory: open_menu.Menu(memory)]} #menu pas forcément utile selon la structure de la fonction
-       menu_suppression = {
-            "question": "Confirmez-vous la suppression du pays ?",
-            "options": ["Confirmer et Supprimer", "Abandonner la procédure"],
-            "action_options": [lambda memory: suppression,
-                               lambda memory: open_menu.Menu(memory)]} #menu pas forcément utile selon la structure de la fonction
-       menu_preselection = {
-            "question": "Voulez vous modifier la liste préselectionnée ?",
-            "options": ["Valider la liste", "Ajouter un pays", "Retirer un pays"],
-            "action_options": [lambda memory: lancer le résumé,
-                               lambda memory: lancer correction(parametre1),
-                               lambda memory: lancer correction(parametre2)]}
+# =============================================================================
+#
+#        menu_correction = {
+#            "question": "Acceptez-vous ou refusez-vous la correction ?",
+#            "options": ["Accepter", "Refuser", "Ne rien faire et quitter"],
+#            "action_options": [(lambda memory: modifier liste_correction et modifier pays,
+#                               lambda memory: modifier liste_correction,
+#                               lambda memory: open_menu.Menu(memory)]} #menu pas forcément utile selon la structure de la fonction
+#        menu_suppression = {
+#             "question": "Confirmez-vous la suppression du pays ?",
+#             "options": ["Confirmer et Supprimer", "Abandonner la procédure"],
+#             "action_options": [lambda memory: suppression,
+#                                lambda memory: open_menu.Menu(memory)]} #menu pas forcément utile selon la structure de la fonction
+#        menu_preselection = {
+#             "question": "Voulez vous modifier la liste préselectionnée ?",
+#             "options": ["Valider la liste", "Ajouter un pays", "Retirer un pays"],
+#             "action_options": [lambda memory: lancer le résumé,
+#                                lambda memory: lancer correction(parametre1),
+#                                lambda memory: lancer correction(parametre2)]}
+# =============================================================================
         
         return menu_acteurs, menu_actions
 
