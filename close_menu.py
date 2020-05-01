@@ -6,7 +6,7 @@ Affiche un message d'aurevoir.
 Pourrait sauvegarder des données mais ne fait rien de tel pour l'instant.
 """
 
-from menu.abstract_vue import AbstractVue
+from Menus.abstract_vue import AbstractVue
 
 
 
