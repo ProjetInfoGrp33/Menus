@@ -1,6 +1,10 @@
-from menu.close_menu import Close
-from menu.start import Start
-import ClassesActeur
+from Menus.close_menu import Close
+from Menus.start import Start
+from ClassesActeur.Consultant import Consultant
+from ClassesActeur.Geographe import Geographe
+from ClassesActeur.DataScientist import DataScientist
+from ClassesActeur.Admin import Admin
+from ClassesActeur.classe_abstraite_connexion import classe_abstraite_connexion
 import numpy as np
 
 class Manager:
