@@ -4,7 +4,7 @@ from ClassesActeur.Consultant import Consultant
 from ClassesActeur.Geographe import Geographe
 from ClassesActeur.DataScientist import DataScientist
 from ClassesActeur.Admin import Admin
-from ClassesActeur.classe_abstraite_connexion import classe_abstraite_connexion
+from ClassesActeur.Classe_abstraite_connexion import Classe_abstraite_connexion
 import numpy as np
 
 class Manager:
@@ -57,7 +57,7 @@ class Manager:
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
             "action_options": [lambda a,memory: return (Consultant(a), [0, 1]),
-                               lambda a,memory: classe_abstraite_connexion().connexion(memory),
+                               lambda a,memory: Classe_abstraite_connexion().connexion(memory),
                                #connexion doit donc renvoyer l'acteur et les indices des tâches
                                lambda a,memory: Close(memory)]
         }
