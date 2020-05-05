@@ -5,7 +5,7 @@
 Affiche un message d'aurevoir.
 Pourrait sauvegarder des données mais ne fait rien de tel pour l'instant.
 """
-
+import json
 from Menus.abstract_vue import AbstractVue
 
 
@@ -25,5 +25,17 @@ class Close(AbstractVue):
         """
         super().__init__(memory)
 
-    def run(self):
+    def run(self,memory):
+        json = json.dumps(memory["data"])
+        f = open("data_propre.json","w")
+        f.write(json)
+        f.close()
+        json = json.dumps(memory["Corrections"])
+        f = open("corrections.json","w")
+        f.write(json)
+        f.close()
+        json = json.dumps(memory["Liste_comptes"])
+        f = open("Liste_comptes.json","w")
+        f.write(json)
+        f.close()
         return None
