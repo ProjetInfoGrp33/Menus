@@ -56,10 +56,10 @@ class Manager:
         menu_acteurs = {
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
-            "action_options": [(lambda a,memory: (Consultant(a), [0, 1])),
-                               (lambda a,memory: Classe_abstraite_connexion().connexion(memory)),
+            "action_options": [(lambda memory: (None, None, "Consultant"),
+                               (lambda memory: Classe_abstraite_connexion().connexion(memory)),
                                #connexion doit donc renvoyer l'acteur et les indices des tâches
-                               (lambda a,memory: Close(memory))]
+                               (lambda memory: Close(memory))]
         }
 # =============================================================================
 #
