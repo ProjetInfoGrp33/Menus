@@ -27,7 +27,7 @@ class Close(AbstractVue):
 
     def run(self,memory):
         json = json.dumps(memory["data"])
-        f = open("data_propre.json","w")
+        f = open("BaseDeDonnees\\data_propre.json","w")
         f.write(json)
         f.close()
         json = json.dumps(memory["Corrections"])
