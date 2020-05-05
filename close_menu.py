@@ -25,16 +25,16 @@ class Close(AbstractVue):
         """
         super().__init__(memory)
 
-    def run(self,memory):
-        json = json.dumps(memory["data"])
+    def run(self):
+        json = json.dumps(self.memory["data"])
         f = open("BaseDeDonnees\\data_propre.json","w")
         f.write(json)
         f.close()
-        json = json.dumps(memory["Corrections"])
+        json = json.dumps(self.memory["Corrections"])
         f = open("corrections.json","w")
         f.write(json)
         f.close()
-        json = json.dumps(memory["Liste_comptes"])
+        json = json.dumps(self.memory["Liste_comptes"])
         f = open("Liste_comptes.json","w")
         f.write(json)
         f.close()
