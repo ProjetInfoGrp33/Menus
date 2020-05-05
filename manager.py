@@ -37,16 +37,16 @@ class Manager:
                         "Accéder à la fonctionnalité avancée",
                         "Quitter"
                         ],
-            "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory["data"],memory)),
-                               (lambda memory: memory["acteur"].proposer_correction(memory,memory["data"],memory["Corrections"])),
-                               (lambda memory: memory["acteur"].accepter_refuser_proposition(memory["data"],memory["Corrections"],memory)),
-                               (lambda memory: memory["acteur"].ajouter_pays(memory["data"],memory)),
-                               (lambda memory: memory["acteur"].modifier_pays(memory["data"],memory)),
-                               (lambda memory: memory["acteur"].supprimer_pays(memory,memory["data"])),
-                               (lambda memory: memory["acteur"].creer_compte(memory,memory["Liste_comptes"],)),
-                               (lambda memory: memory["acteur"].supprimer_compte(memory),memory["Liste_comptes"]),
-                               (lambda memory: memory["acteur"].resume_informations(memory["data"],memory)),
-                               (lambda memory: memory["acteur"].representation_graphique(memory["data"],memory)),
+            "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory)),
+                               (lambda memory: memory["acteur"].proposer_correction(memory)),
+                               (lambda memory: memory["acteur"].accepter_refuser_proposition(memory)),
+                               (lambda memory: memory["acteur"].ajouter_pays(memory)),
+                               (lambda memory: memory["acteur"].modifier_pays(memory)),
+                               (lambda memory: memory["acteur"].supprimer_pays(memory)),
+                               (lambda memory: memory["acteur"].creer_compte(memory)),
+                               (lambda memory: memory["acteur"].supprimer_compte(memory)),
+                               (lambda memory: memory["acteur"].resume_informations(memory)),
+                               (lambda memory: memory["acteur"].representation_graphique(memory)),
                                # rajouter les fonctions perso + fonctionnalité avancée?
                                (lambda memory: Close(memory))
                                ]
