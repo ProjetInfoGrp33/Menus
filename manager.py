@@ -34,7 +34,6 @@ class Manager:
                         "Supprimer un compte",
                         "Obtenir un résumé d'informations",
                         "Obtenir une représentation graphique",
-                        "Accéder à la fonctionnalité avancée",
                         "Quitter"
                         ],
             "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory)),
