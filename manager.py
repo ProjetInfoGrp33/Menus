@@ -34,6 +34,10 @@ class Manager:
                         "Supprimer un compte",
                         "Obtenir un résumé d'informations",
                         "Obtenir une représentation graphique",
+                        "Obtenir les coefficients de corrélation entre 2 variables (Ines)",
+                        "Tracer un graphe entre 2 variables (Erwan)",
+                        "Obtenir des informations sur les valeurs manquantes (Justin)",
+                        "Profils de pays (fonctionnalité avancée)",
                         "Quitter"
                         ],
             "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory)),
@@ -45,7 +49,11 @@ class Manager:
                                (lambda memory: memory["acteur"].creer_compte(memory)),
                                (lambda memory: memory["acteur"].supprimer_compte(memory)),
                                (lambda memory: memory["acteur"].resume_informations(memory)),
-                               (lambda memory: memory["acteur"].representation_graphique(memory)),
+                               (lambda memory: memory["acteur"].representation_graphique(memory)),                               
+                               (lambda memory: memory["acteur"].ines(memory)),
+                               (lambda memory: memory["acteur"].erwan(memory)),
+                               (lambda memory: memory["acteur"].justin(memory)),
+                               (lambda memory: memory["acteur"].cluster(memory)),
                                # rajouter les fonctions perso + fonctionnalité avancée?
                                (lambda memory: Close(memory))
                                ]
