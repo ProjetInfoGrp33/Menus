@@ -55,7 +55,7 @@ class Manager:
         menu_acteurs = {
             "question": "Quel est votre statut?",
             "options": ["Consultant", "Super acteur", "Quitter"],
-            "action_options": [(lambda memory: return (None, None, "Consultant")),
+            "action_options": [(lambda memory: (None, None, "Consultant")),
                                (lambda memory: Classe_abstraite_connexion().connexion(memory)),
                                #connexion doit donc renvoyer l'acteur et les indices des tâches
                                (lambda memory: Close(memory))]
@@ -85,15 +85,15 @@ class Manager:
 
     def bienvenu(self):
         # affiche le message de bienvenue
-        with open('assets/banner.txt', 'r', encoding="utf-8") as asset:
+        with open('Menus/banner.txt', 'r', encoding="utf-8") as asset:
             print(asset.read())
 
     def aurevoir(self):
-        with open('assets/cat.txt', 'r', encoding="utf-8") as asset:
+        with open('Menus/cat.txt', 'r', encoding="utf-8") as asset:
             print(asset.read())
 
     def bordure(self):
-        with open('assets/border.txt', 'r', encoding="utf-8") as asset:
+        with open('Menus/border.txt', 'r', encoding="utf-8") as asset:
             print(asset.read())
 
     def creat_menu(self, info_menus , auto_iter=False):
