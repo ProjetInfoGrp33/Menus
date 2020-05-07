@@ -36,7 +36,7 @@ class Manager:
                         "Obtenir une représentation graphique",
                         "Obtenir les coefficients de corrélation entre 2 variables (Ines)",
                         "Tracer un graphe entre 2 variables (Erwan)",
-                        "Obtenir des informations sur les valeurs manquantes (Justin)",
+                        "Afficher les pays avec le plus de valeurs manquantes (Justin)",
                         "Profils de pays (fonctionnalité avancée)",
                         "Quitter"
                         ],
