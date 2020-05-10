@@ -38,6 +38,7 @@ class Manager:
                         "Tracer un graphe entre 2 variables (Erwan)",
                         "Afficher les pays avec le plus de valeurs manquantes (Justin)",
                         "Profils de pays (fonctionnalité avancée)",
+                        "Se déconnecter",
                         "Quitter"
                         ],
             "action_options": [(lambda memory: memory["acteur"].afficher_pays(memory)),
@@ -54,6 +55,7 @@ class Manager:
                                (lambda memory: memory["acteur"].erwan(memory)),
                                (lambda memory: memory["acteur"].justin(memory)),
                                (lambda memory: memory["acteur"].cluster(memory)),
+                               (lambda memory: Close(memory)),
                                (lambda memory: Close(memory))
                                ]
         }
